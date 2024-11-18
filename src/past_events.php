@@ -15,7 +15,7 @@ echo "<div class='event-list-container'>";
 echo "<ul class='event-list'>";
 
 if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
+    while ($row = $result->fetch_assoc()) {
         $description = $row['description'];
         $truncatedDescription = strlen($description) > 100 ? substr($description, 0, 100) . '...' : $description;
         echo "<li>";
@@ -36,4 +36,3 @@ echo "</ul>";
 echo "</div>";
 
 require '../templates/footer.php';
-?>

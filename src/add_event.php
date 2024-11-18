@@ -24,13 +24,13 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
             die("Prepare failed: " . $conn->error);
         }
         $stmt->bind_param("sss", $title, $description, $event_date);
-
+    
         if ($stmt->execute()) {
             $successMessage = "Event added successfully.";
         } else {
             echo "Error: " . $stmt->error;
         }
-
+    
         $stmt->close();
     }
 }
@@ -53,4 +53,3 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <?php
 require '../templates/footer.php';
-?>
