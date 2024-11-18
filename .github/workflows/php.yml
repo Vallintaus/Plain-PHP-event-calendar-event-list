@@ -21,6 +21,11 @@ jobs:
         with:
           php-version: '7.4'
 
+      - name: Run Super-linter
+        uses: github/super-linter@v4
+        env:
+          VALIDATE_PHP: 'true'
+
       - name: Validate PHP syntax
         run: |
           find . -name "*.php" -print0 | xargs -0 -n 1 php -l
