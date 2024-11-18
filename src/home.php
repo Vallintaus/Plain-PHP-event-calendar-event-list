@@ -1,8 +1,10 @@
 <?php
-require '../config.php';
+$conn = require '../config.php';
 require '../templates/header.php';
 
-global $conn;
+if (!isset($conn)) {
+    die("Database connection not established.");
+}
 
 // Fetch future events from the database
 $currentDate = date('Y-m-d');

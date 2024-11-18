@@ -1,8 +1,7 @@
 <?php
-require '../config.php';
+$conn = require '../config.php';
 require '../templates/header.php';
 
-global $conn;
 
 
 if (!isset($conn)) {
@@ -11,10 +10,10 @@ if (!isset($conn)) {
 
 $successMessage = '';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $title = $_POST['title'];
-    $description = $_POST['description'];
-    $event_date = $_POST['event_date'];
+if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
+    $title = $_POST['title'] ?? '';
+    $description = $_POST['description'] ?? '';
+    $event_date = $_POST['event_date'] ?? '';
 
     // Validate input
     if (empty($title) || empty($event_date)) {
