@@ -5,10 +5,12 @@ $password = "password";
 $dbname = "database";
 
 // create connection
-const CONN = new mysqli($servername, $username, $password, $dbname);
+global $conn;
+
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // check connection
-if (CONN->connect_error) {
-    die("Connection failed: " . CONN->connect_error);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 ?>
