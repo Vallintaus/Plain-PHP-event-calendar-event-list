@@ -2,6 +2,9 @@
 require '../config.php';
 require '../templates/header.php';
 
+global $conn;
+
+
 if (!isset($conn)) {
     die("Database connection not established.");
 }

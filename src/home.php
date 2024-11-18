@@ -2,6 +2,8 @@
 require '../config.php';
 require '../templates/header.php';
 
+global $conn;
+
 // Fetch future events from the database
 $currentDate = date('Y-m-d');
 $result = $conn->query("SELECT * FROM events WHERE event_date >= '$currentDate' ORDER BY event_date ASC");
