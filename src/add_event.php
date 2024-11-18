@@ -2,7 +2,7 @@
 require '../config.php';
 require '../templates/header.php';
 
-if (!isset($conn)) {
+if (!isset(CONN)) {
     die("Database connection not established.");
 }
 
@@ -17,9 +17,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($title) || empty($event_date)) {
         echo "Title and Event Date are required.";
     } else {
-        $stmt = $conn->prepare("INSERT INTO events (title, description, event_date) VALUES (?, ?, ?)");
+        $stmt = CONN->prepare("INSERT INTO events (title, description, event_date) VALUES (?, ?, ?)");
         if ($stmt === false) {
-            die("Prepare failed: " . $conn->error);
+            die("Prepare failed: " . CONN->error);
         }
         $stmt->bind_param("sss", $title, $description, $event_date);
 

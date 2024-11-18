@@ -4,7 +4,7 @@ require '../templates/header.php';
 
 // Fetch future events from the database
 $currentDate = date('Y-m-d');
-$result = $conn->query("SELECT * FROM events WHERE event_date >= '$currentDate' ORDER BY event_date ASC");
+$result = CONN->query("SELECT * FROM events WHERE event_date >= '$currentDate' ORDER BY event_date ASC");
 
 echo "<h2>Upcoming Events</h2>";
 echo "<div class='event-list-container'>";
