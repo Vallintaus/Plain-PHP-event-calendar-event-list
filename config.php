@@ -1,8 +1,8 @@
 <?php 
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "event_calendar_db";
+$username = "username";
+$password = "password";
+$dbname = "database";
 
 // create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
