@@ -2,6 +2,10 @@
 require '../config.php';
 require '../templates/header.php';
 
+if (!isset($conn)) {
+    die("Database connection not established.");
+}
+
 $successMessage = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
